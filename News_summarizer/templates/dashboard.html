@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Summarizer - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #121212;
+        } 
+        
+        header {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            padding: 1rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            margin-left: 28px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        nav {
+            margin-right: 15px;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .btn {
+            background-color: transparent;
+            color: #e0e0e0;
+            border: 2px solid #e0e0e0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #e0e0e0;
+            color: #1e1e1e;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .search-section {
+            background-color: #e9ecef;
+            padding: 1rem 0;
+        }
+        .search-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .search-input {
+            flex-grow: 1;
+            padding: 0.5rem;
+            border: 1px solid #ced4da;
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        .search-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        main {
+            padding: 2rem 0;
+        }
+        .today-news {
+            color: white;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .today-news-content {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        .today-news-image {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .today-news-text {
+            color: white;
+            flex: 1;
+        }
+        .today-news-title {
+            color: white;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .top-news-btn {
+            display: inline-block;
+            background-color: #1a1aff;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+        .top-news-btn:hover {
+            background-color: #0056b3;
+        }
+        .categories {
+            
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .category-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 1rem;
+            color: #333;
+        }
+        .category-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .category-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .today-news-content {
+                flex-direction: column;
+            }
+            .today-news-image {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+            .categories {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+        h2 {
+            color: white;
+        }
+        input{
+            background-color: #1e1e1e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">News Summarizer</div>
+        <nav>
+            
+            <a href="/about/" class="btn">About</a>
+            <a href="/" class="btn">Home</a>
+        </nav>
+    </header>
+    {% comment %} <section class="search-section">
+        <div class="container">
+            <form class="search-form" action="/search/" method="post">
+                {% csrf_token %} 
+                <input type="search" name="q" placeholder="Search news..." class="search-input" required>
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+    </section> {% endcomment %}
+    
+    <main>
+        
+        <div class="container">
+            <section class="today-news">
+                <h2>Hello, {{name}} </h2>
+                <div class="today-news-content">
+                    <div class="today-news-text">
+                        <a href="/bookmark/" class="top-news-btn">View Your Saved Articles</a>
+                    </div>
+                </div>
+            </section>
+            <section class="today-news">
+                <h2>Today's News</h2>
+                <div class="today-news-content">
+                    <img src="{{record.1}}" alt="Today's top news image" class="today-news-image">
+                    <div class="today-news-text">
+                        <h3 class="today-news-title">{{record.0}}</h3>
+                        <p>{{record.2}}</p>
+                    
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>News Categories</h2>
+                <form class="categories" action="/categories/" method="post">
+                    {% csrf_token %} 
+                    <input type="submit" name="category" value="Business" class="category-btn" style="background-image: url('https://www.shutterstock.com/image-photo/business-men-break-sit-read-260nw-570316480.jpg');color: white;background-color: #1e1e1e; background-repeat: no-repeat; background-position: center 1rem; background-size: 80px 80px; padding-top: 100px;">
+                    <input type="submit" name="category" value="Health" class="category-btn" style="background-image: url('https://www.shutterstock.com/image-illustration/medical-abstract-background-suitable-healthcare-260nw-442428001.jpg');color: white;background-color: #1e1e1e; background-repeat: no-repeat; background-position: center 1rem; background-size: 80px 80px; padding-top: 100px;">
+                    <input type="submit" name="category" value="Movies" class="category-btn" style="background-image: url('https://pbs.twimg.com/profile_images/998188851246940162/7HDJnMol_400x400.jpg');color: white;background-color: #1e1e1e; background-repeat: no-repeat; background-position: center 1rem; background-size: 80px 80px; padding-top: 100px;">
+                    <input type="submit" name="category" value="Sports" class="category-btn" style="background-image: url('https://static.toiimg.com/thumb/msid-73307467,width-400,resizemode-4/73307467.jpg'); color: white; background-color: #1e1e1e; background-repeat: no-repeat; background-position: center 1rem; background-size: 80px 80px; padding-top: 100px;">
+                    <input type="submit" name="category" value="Science" class="category-btn" style="background-image: url('https://play-lh.googleusercontent.com/gh3LvP3YXG1Bh5QwQ9r1jXdBcealicPNDqqmyv1JTs_tFkGkb70ltIVlUfZmosF3DA'); color: white; background-color: #1e1e1e; background-repeat: no-repeat; background-position: center 1rem; background-size: 80px 80px; padding-top: 100px;">
+                    <input type="submit" name="category" value="Education" class="category-btn" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaeCuPWjBxzHmz7z-pFO19Ahby2pkn6Qfh7w&s'); color: white; background-color: #1e1e1e; background-repeat: no-repeat; background-position: center 1rem; background-size: 80px 80px; padding-top: 100px;">
+                    <input type="submit" name="category" value="Technology" class="category-btn" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0fb0z7dXRPbbyflpxpbaoZdtc78-5j9r-AA&s'); color: white; background-color: #1e1e1e; background-repeat: no-repeat; background-position: center 1rem; background-size: 80px 80px; padding-top: 100px;">
+                    <input type="submit" name="category" value="Politics" class="category-btn" style="background-image: url('https://www.marketing91.com/wp-content/uploads/2020/03/What-is-Organizational-Politics.jpg'); color: white; background-color: #1e1e1e; background-repeat: no-repeat; background-position: center 1rem; background-size: 80px 80px; padding-top: 100px;">
+                    <input type="submit" name="category" value="Crypto" class="category-btn" style="background-image: url('https://chainfluent.io/wp-content/uploads/2022/01/ARTICLE-CRYPTO-2-1.png'); color: white; background-color: #1e1e1e; background-repeat: no-repeat; background-position: center 1rem; background-size: 80px 80px; padding-top: 100px;">
+                    </form>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

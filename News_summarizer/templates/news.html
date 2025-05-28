@@ -1,0 +1,793 @@
+<head>
+
+<link rel = "stylesheet" href="/static/news.css">
+
+<style>
+    img {
+
+    width: 300px;
+    border-radius: 10px;
+
+}
+
+body{
+    background-color: black;
+}
+
+header {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  gap: 0.5rem;
+}
+.btn0 {
+  background-color: transparent;
+  color: #e0e0e0;
+  border: 2px solid #e0e0e0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 600;
+}
+.btn0:hover {
+  background-color: #e0e0e0;
+  color: #1e1e1e;
+}
+.cards {
+    padding-top: 20px;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+.image{
+    margin-left: 15px;
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.back {
+    margin: 5px;
+    padding: 20px;
+
+}
+
+.card {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    color: #e8e8e8;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.content .heading {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.content .para {
+    padding-bottom: 10px;
+    line-height: 1.5;
+}
+
+.content .btn {
+    color: #e8e8e8;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #F5C7F7 0%, #27296D 100%);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(-45deg, #F5C7F7 0%, #27296D 100%);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover::before {
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: none;
+}
+
+.card:hover .btn {
+    color: #212121;
+    background: #e8e8e8;
+}
+
+.content .btn:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+}
+
+.content .btn:active {
+    box-shadow: none;
+}
+
+ 
+.ui-bookmark {
+    margin: 5px;
+  --icon-size: 24px;
+  --icon-secondary-color: rgb(16, 16, 10);
+  --icon-hover-color: rgb(255, 255, 255);
+  --icon-primary-color: white;
+  --icon-circle-border: 1px solid var(--icon-primary-color);
+  --icon-circle-size: 35px;
+  --icon-anmt-duration: 0.3s;
+}
+
+.ui-bookmark input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.ui-bookmark .bookmark {
+  width: var(--icon-size);
+  height: auto;
+  fill: var(--icon-secondary-color);
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+}
+
+.bookmark::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  -webkit-box-shadow: 0 30px 0 -4px var(--icon-primary-color),
+    30px 0 0 -4px var(--icon-primary-color),
+    0 -30px 0 -4px var(--icon-primary-color),
+    -30px 0 0 -4px var(--icon-primary-color),
+    -22px 22px 0 -4px var(--icon-primary-color),
+    -22px -22px 0 -4px var(--icon-primary-color),
+    22px -22px 0 -4px var(--icon-primary-color),
+    22px 22px 0 -4px var(--icon-primary-color);
+  box-shadow: 0 30px 0 -4px var(--icon-primary-color),
+    30px 0 0 -4px var(--icon-primary-color),
+    0 -30px 0 -4px var(--icon-primary-color),
+    -30px 0 0 -4px var(--icon-primary-color),
+    -22px 22px 0 -4px var(--icon-primary-color),
+    -22px -22px 0 -4px var(--icon-primary-color),
+    22px -22px 0 -4px var(--icon-primary-color),
+    22px 22px 0 -4px var(--icon-primary-color);
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.bookmark::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: var(--icon-circle-border);
+  opacity: 0;
+}
+
+/* actions */
+
+.ui-bookmark:hover .bookmark {
+  fill: var(--icon-hover-color);
+}
+
+.ui-bookmark input:checked + .bookmark::after {
+  -webkit-animation: circles var(--icon-anmt-duration)
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: circles var(--icon-anmt-duration)
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  -webkit-animation-delay: var(--icon-anmt-duration);
+  animation-delay: var(--icon-anmt-duration);
+}
+
+.ui-bookmark input:checked + .bookmark {
+  fill: var(--icon-primary-color);
+  -webkit-animation: bookmark var(--icon-anmt-duration) forwards;
+  animation: bookmark var(--icon-anmt-duration) forwards;
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.ui-bookmark input:checked + .bookmark::before {
+  -webkit-animation: circle var(--icon-anmt-duration)
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: circle var(--icon-anmt-duration)
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  -webkit-animation-delay: var(--icon-anmt-duration);
+  animation-delay: var(--icon-anmt-duration);
+}
+
+@-webkit-keyframes bookmark {
+  50% {
+    -webkit-transform: scaleY(0.6);
+    transform: scaleY(0.6);
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+@keyframes bookmark {
+  50% {
+    -webkit-transform: scaleY(0.6);
+    transform: scaleY(0.6);
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes circle {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  90% {
+    width: var(--icon-circle-size);
+    height: var(--icon-circle-size);
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes circle {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  90% {
+    width: var(--icon-circle-size);
+    height: var(--icon-circle-size);
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes circles {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes circles {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.btn {
+  background-color: transparent;
+  color: #e0e0e0;
+  border: 2px solid #e0e0e0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #e0e0e0;
+  color: #1e1e1e;
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">News Summarizer</div>
+    <nav>
+        <a href="/about/"><button href="about" class="btn0">About</button></a>
+        <a href="/dashboard/"><button href="about" class="btn0">Dashboard</button></a>
+        <a href="/"><button href="" class="btn0">Logout</button></a>
+    </nav>
+</header>
+
+    <form method="post" action="/saved/">
+      {% csrf_token %} 
+    <div class="cards">
+        {% for i in record%}
+        <div class="back">
+    <div class="card">
+        <div class="top">
+        <img class="image" src="{{i.1}}" alt="Image not available">
+        <label class="ui-bookmark">
+            <input type="checkbox" name="list" value="{{i.4}}">
+            <div class="bookmark">
+              <svg viewBox="0 0 32 32">
+                <g>
+                  <path d="M27 4v27a1 1 0 0 1-1.625.781L16 24.281l-9.375 7.5A1 1 0 0 1 5 31V4a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4z"></path>
+                </g>
+              </svg>
+            </div>
+          </label>
+        </div>
+      <div class="content">
+        <input type="hidden" name="title_{{i.4}}" value="{{i.0}}" readonly>
+        {% comment %} <input type="image" name="img_{{i.4}}" value="{{i.1}}"> {% endcomment %}
+        <p class="heading">{{i.0}}</p>
+        <input type="hidden" name="des_{{i.4}}" value="{{i.2}}" readonly>
+        <p class="para">
+            {{i.2}}
+        </p>
+        <br>
+        <p class="para">
+          Summarized Ratio : {{i.5}}
+      </p>
+        <input type="hidden" name="link_{{i.4}}" value="{{i.3}}">
+        <a href= "{{i.3}}" target="_blank"><button class="btn" >Read more</button></a>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+    </div>
+
+    <input class="btn0" style="margin-left:15px" type="submit" value="Save the article">
+    {% comment %} <a href="login" class="btn" style="margin-top: 50px"></a> {% endcomment %}
+  </form>
+<script>
+    function myFunction() {
+    window.location.href = "/";
+    }
+    </script> 
+
+</body>
+
+
+    
+    </html> 
+
+
+    {% comment %} <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive Bookmarks</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f0f0f0;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            h1 {
+                text-align: center;
+                color: #333;
+            }
+            .card-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+            }
+            .card {
+                flex: 1;
+                min-width: 0;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                overflow: hidden;
+                position: relative;
+            }
+            .card-image {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+            }
+            .card-content {
+                padding: 16px;
+            }
+            .card-title {
+                font-size: 1.1rem;
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: #333;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .card-description {
+                font-size: 0.9rem;
+                color: #666;
+                margin-bottom: 16px;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .card-button {
+                display: inline-block;
+                padding: 8px 16px;
+                background-color: #007bff;
+                color: white;
+                text-decoration: none;
+                border-radius: 4px;
+                font-size: 0.9rem;
+                transition: background-color 0.3s ease;
+            }
+            .card-button:hover {
+                background-color: #0056b3;
+            }
+            .bookmark-checkbox {
+                display: none;
+            }
+            .bookmark-label {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 24px;
+                height: 24px;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .bookmark-label:hover {
+                background-color: rgba(255, 255, 255, 1);
+            }
+            .bookmark-icon {
+                width: 16px;
+                height: 16px;
+                fill: none;
+                stroke: #007bff;
+                stroke-width: 2;
+                transition: fill 0.3s ease;
+            }
+            .bookmark-checkbox:checked + .bookmark-label .bookmark-icon {
+                fill: #007bff;
+            }
+            /* From Uiverse.io by Galahhad */ 
+.ui-bookmark {
+  --icon-size: 24px;
+  --icon-secondary-color: rgb(77, 77, 77);
+  --icon-hover-color: rgb(97, 97, 97);
+  --icon-primary-color: gold;
+  --icon-circle-border: 1px solid var(--icon-primary-color);
+  --icon-circle-size: 35px;
+  --icon-anmt-duration: 0.3s;
+}
+
+.ui-bookmark input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.ui-bookmark .bookmark {
+  width: var(--icon-size);
+  height: auto;
+  fill: var(--icon-secondary-color);
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+}
+
+.bookmark::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  -webkit-box-shadow: 0 30px 0 -4px var(--icon-primary-color),
+    30px 0 0 -4px var(--icon-primary-color),
+    0 -30px 0 -4px var(--icon-primary-color),
+    -30px 0 0 -4px var(--icon-primary-color),
+    -22px 22px 0 -4px var(--icon-primary-color),
+    -22px -22px 0 -4px var(--icon-primary-color),
+    22px -22px 0 -4px var(--icon-primary-color),
+    22px 22px 0 -4px var(--icon-primary-color);
+  box-shadow: 0 30px 0 -4px var(--icon-primary-color),
+    30px 0 0 -4px var(--icon-primary-color),
+    0 -30px 0 -4px var(--icon-primary-color),
+    -30px 0 0 -4px var(--icon-primary-color),
+    -22px 22px 0 -4px var(--icon-primary-color),
+    -22px -22px 0 -4px var(--icon-primary-color),
+    22px -22px 0 -4px var(--icon-primary-color),
+    22px 22px 0 -4px var(--icon-primary-color);
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.bookmark::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: var(--icon-circle-border);
+  opacity: 0;
+}
+
+/* actions */
+
+.ui-bookmark:hover .bookmark {
+  fill: var(--icon-hover-color);
+}
+
+.ui-bookmark input:checked + .bookmark::after {
+  -webkit-animation: circles var(--icon-anmt-duration)
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: circles var(--icon-anmt-duration)
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  -webkit-animation-delay: var(--icon-anmt-duration);
+  animation-delay: var(--icon-anmt-duration);
+}
+
+.ui-bookmark input:checked + .bookmark {
+  fill: var(--icon-primary-color);
+  -webkit-animation: bookmark var(--icon-anmt-duration) forwards;
+  animation: bookmark var(--icon-anmt-duration) forwards;
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.ui-bookmark input:checked + .bookmark::before {
+  -webkit-animation: circle var(--icon-anmt-duration)
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: circle var(--icon-anmt-duration)
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  -webkit-animation-delay: var(--icon-anmt-duration);
+  animation-delay: var(--icon-anmt-duration);
+}
+
+@-webkit-keyframes bookmark {
+  50% {
+    -webkit-transform: scaleY(0.6);
+    transform: scaleY(0.6);
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+@keyframes bookmark {
+  50% {
+    -webkit-transform: scaleY(0.6);
+    transform: scaleY(0.6);
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes circle {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  90% {
+    width: var(--icon-circle-size);
+    height: var(--icon-circle-size);
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes circle {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  90% {
+    width: var(--icon-circle-size);
+    height: var(--icon-circle-size);
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes circles {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes circles {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+        </style>
+    </head>
+    <body>
+        <button type="button" onclick="myFunction()"> Home </button>
+
+        <div class="container">
+            <h1>News Summarizer</h1>
+            <div class="card-container">
+                {% for i in record%}
+                <div class="card">
+                    <img src="{{i.1}}" alt="Image not available" class="card-image">
+                    {% comment %} <input type="checkbox" id="bookmark1" class="bookmark-checkbox">
+                    <label for="bookmark1" class="bookmark-label">
+                        <svg class="bookmark-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </label> 
+                    
+<label class="ui-bookmark">
+    <input type="checkbox">
+    <div class="bookmark">
+      <svg viewBox="0 0 32 32">
+        <g>
+          <path d="M27 4v27a1 1 0 0 1-1.625.781L16 24.281l-9.375 7.5A1 1 0 0 1 5 31V4a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4z"></path>
+        </g>
+      </svg>
+    </div>
+  </label>
+                    <div class="card-content">
+                        <h2 class="card-title">{{i.0}}</h2>
+                        <p class="card-description">{{i.2}}</p>
+                        <a href= "{{i.3}}" target="_blank" class="card-button">Read More</a>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+
+
+        <script>
+            function myFunction() {
+            window.location.href = "/";
+            }
+            </script> 
+    </body>
+    </html> {% endcomment %}

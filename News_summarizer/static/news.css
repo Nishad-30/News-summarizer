@@ -1,0 +1,107 @@
+img {
+
+    width: 300px;
+    border-radius: 10px;
+
+}
+
+body{
+    background-color: black;
+}
+
+.cards {
+    padding-top: 20px;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+;
+
+.back {
+    margin: 10px;
+    padding: 20px;
+
+}
+
+.card {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    color: #e8e8e8;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.content .heading {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.content .para {
+    padding-bottom: 10px;
+    line-height: 1.5;
+}
+
+.content .btn {
+    color: #e8e8e8;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #F5C7F7 0%, #27296D 100%);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(-45deg, #F5C7F7 0%, #27296D 100%);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover::before {
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: none;
+}
+
+.card:hover .btn {
+    color: #212121;
+    background: #e8e8e8;
+}
+
+.content .btn:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+}
+
+.content .btn:active {
+    box-shadow: none;
+}
