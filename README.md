@@ -31,6 +31,8 @@ The need for a news summarizer arises from the growing challenges posed by the v
 
 *Login page –*
 
+![image](https://github.com/user-attachments/assets/b26d1227-6e51-4ca3-b4c1-91569de2ad41)
+
 ![image](https://github.com/user-attachments/assets/4e32d43a-08be-4745-be5c-5b5ce85ee259)
 
 *Signup page –*
