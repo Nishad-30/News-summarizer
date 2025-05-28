@@ -12,8 +12,8 @@ message = ["","Account already exist", "Password does not match", "Email does no
 a = 0
 id = "demo@gmail.com"
 name = "Guest User"
-google_api = "AIzaSyCSLkU-RU93RQjVoajAnNqLBiLz4qLrw5s"
-news_api = "pub_78522cfd3d199c17ff7f244172473128e3c27"
+google_api = "<google-api>"
+news_api = "<news-api>"
 genai.configure(api_key=google_api)
 
 def summarizer(records):
