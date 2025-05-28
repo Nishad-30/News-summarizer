@@ -33,16 +33,17 @@ The need for a news summarizer arises from the growing challenges posed by the v
 
 ![image](https://github.com/user-attachments/assets/b26d1227-6e51-4ca3-b4c1-91569de2ad41)
 
-![image](https://github.com/user-attachments/assets/4e32d43a-08be-4745-be5c-5b5ce85ee259)
-
 *Signup page –*
-
-![image](https://github.com/user-attachments/assets/46314d2c-525d-4116-b3b4-34c1554ab896)
+![image](https://github.com/user-attachments/assets/4e32d43a-08be-4745-be5c-5b5ce85ee259)
 
 *Dashboard –*
 
-![image](https://github.com/user-attachments/assets/3587b90e-bcaf-4e52-afd9-9074679ab8b7)
+![image](https://github.com/user-attachments/assets/46314d2c-525d-4116-b3b4-34c1554ab896)
 
 *News Article page –*
+
+![image](https://github.com/user-attachments/assets/3587b90e-bcaf-4e52-afd9-9074679ab8b7)
+
+*Error page -*
 
 ![image](https://github.com/user-attachments/assets/9b27a973-bc2c-4408-91a4-94573c9c46d0)
